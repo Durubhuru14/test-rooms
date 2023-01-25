@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room Test</title>
+</head>
+<style>
+  body {
+    font-size: 18pt;
+  }
+  button {
+    margin-bottom: 6px;
+    padding: 6px;
+  }
+</style>
+<body>
+  <input type="text" placeholder="Enter your message" id="message">
+  <button id="send">Send</button>
+  <br>
+  <input type="text" placeholder="Enter room name" id="room">
+  <button id="join">Join</button>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    const socket = io();
+    let msg = document.getElementById('message')
+    let sendBtn = document.getElementById('send')
+    let room = document.getElementById('room')
+    let joinBtn = document.getElementById('join')
+    
+    sendBtn.addEventListener('click',() => {
+      alert(msg.value)
+    })
+    
+    joinBtn.addEventListener('click',() => {
+      alert(room.value)
+    })
+  </script>
+</body>
+</html>
